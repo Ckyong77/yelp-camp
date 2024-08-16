@@ -1,0 +1,42 @@
+<% layout('layout/boilerplate') %>
+  
+<div class="row">
+  <h1 class="text-center">New Campground</h1>
+<form action="/campgrounds" class="needs-validation" method="POST" novalidate>
+    <div class="col-6 mx-auto">  
+        <div class="mb-3 " >
+            <label for="title" class="form-label">Title</label>
+            <input type="text" class="form-control" id="title" name="campground[title]" required>
+            <div class="valid-feedback">
+              okay this looks good!
+            </div>
+          </div>
+          <div class="mb-3">
+            <label for="location" class="form-label">Location</label>
+            <input type="text" class="form-control" id="location" name="campground[location]" required>
+          </div>
+          <div class="mb-3">
+            <label for="price" class="form-label">Price</label>
+            <div class="input-group">
+                <span class="input-group-text">$</span>
+                <input type="text" class="form-control" id="price" name="campground[price]"placeholder="0.00"aria-label="Amount (to the nearest dollar)" required>
+                <div class="invalid-feedback">
+                  you want this to be free?
+                </div>
+            </div>
+        </div>
+          <div class="mb-3">
+            <label for="desciption" class="form-label">Desciption</label>
+            <textarea class="form-control" id="description" name="campground[description]" rows="5" required></textarea>
+          </div>
+          <div class="mb-3">
+            <label for="image" class="form-label">Image Url</label>
+            <input type="text" class="form-control" id="image" name="campground[image]" required></input>
+          </div>
+        <div class="mb-3">
+            <button class="btn btn-secondary">Add Campground</button>
+        </div>
+</form>
+    <a href="/campgrounds">Back to index</a>
+    </div>  
+

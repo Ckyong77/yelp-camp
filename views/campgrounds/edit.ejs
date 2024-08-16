@@ -1,0 +1,37 @@
+<% layout('layout/boilerplate') %>
+
+<div class="row">
+    <h1 class="text-center">Edit Campground</h1>
+    <div class="col-6 mx-auto"> 
+    <form action="/campgrounds/<%=campgrounds.id%>?_method=PATCH" class="needs-validation" method="POST" novalidate>
+ 
+            <div class="mb-3 " >
+                <label for="title" class="form-label">Title</label>
+                <input type="text" class="form-control" id="title" name="campground[title]"  value="<%= campgrounds.title %>" required>
+              </div>
+              <div class="mb-3">
+                <label for="location" class="form-label">Location</label>
+                <input type="text" class="form-control" id="location" name="campground[location]" value="<%= campgrounds.location %>" required>
+              </div>
+              <div class="mb-3">
+                <label for="price" class="form-label">Price</label>
+                <div class="input-group">
+                    <span class="input-group-text">$</span>
+                    <input type="text" class="form-control" id="price" name="campground[price]"placeholder="0.00"aria-label="Amount (to the nearest dollar)" value="<%= campgrounds.price %>" required>
+                </div>
+            </div>
+              <div class="mb-3">
+                <label for="desciption" class="form-label">Desciption</label>
+                <textarea class="form-control" id="description" name="campground[description]" rows="5" required> <%= campgrounds.description %> </textarea>
+              </div>
+              <div class="mb-3">
+                <label for="image" class="form-label">Image Url</label>
+                <input type="text" class="form-control" id="image" name="campground[image]" value="<%= campgrounds.image %>" required></input>
+              </div>
+            <div class="mb-3">
+                <button class="btn btn-secondary">Update Campground</button>
+            </div>
+    </form>
+    <a href="/campgrounds/<%= campgrounds.id %>">Cancel the edit</a>
+        </div>  
+    </div>
